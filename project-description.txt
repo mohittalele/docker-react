@@ -1,0 +1,3 @@
+Create a container for development, production and test environment.
+
+The app is simple web application called frontend.

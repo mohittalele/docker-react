@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install
+
+COPY . .  
+# Eventhough we will refernce the contains of this folder to the folders in the local machine, Its good idea to copy it. Because we # will need this copy instruction for the production container.
+
+CMD ["npm","run","start"]

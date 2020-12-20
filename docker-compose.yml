@@ -1,0 +1,20 @@
+version:  '3'
+services:
+  web:
+    build: 
+      context: .  # directory from which all the files come from
+      dockerfile: Dockerfile.dev
+    ports:
+      - "3000:3000"
+    volumes:
+      - /app/node_modules
+      - .:/app
+  tests:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    volumes :
+      - /app/node_modules #Do not map a folder agaist this folder.
+      - .:/app
+    command: ["npm","run","test"] # overwrite the command from the 
+
