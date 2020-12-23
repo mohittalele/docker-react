@@ -1,3 +1,10 @@
-Create a container for development, production and test environment.
+1) Create a container for development, production and test environment.
 
 The app is simple web application called frontend.
+
+2) create a pipeline to automatically test the code on Travis. Remember this is development stage and we should use the development version of docker file. 
+
+3) Once the CI has been done also deploy this app to AWS
+
+
+ 
