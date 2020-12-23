@@ -9,7 +9,7 @@ script:
   - docker run mtalele/docker-react npm run test -- --coverage
 
 deploy:
-  provider: elasticbeansstalk
+  provider: elasticbeanstalk
   region: "us-east-2"
   app: "docker-react"
   env: "DockerReact-env"
