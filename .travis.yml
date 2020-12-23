@@ -2,12 +2,15 @@ language: generic
 sudo: required
 services:
   - docker
+# for testing purposes use the dev version of Dockerfile and overwrite the default command for the testing.
 before_install:
   - docker build -t mtalele/docker-react -f Dockerfile.dev .    
 
 script:
   - docker run -e CI=true mtalele/docker-react npm run test
 
+#elasticbeanstalk will automatically look for Dockerfile or docker-compose file depending on the platform used for creation of the AWS application.
+# AWS linux will build using the Dockerfile und AWS Linux2 will built using the docker-compose. In this app, we are using the linux aws platform and AWS will built using Dockerfile
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
